@@ -30,4 +30,4 @@ Enjoy the strategic challenge of Dots_and_Boxes!
 
 Download the game and dive into the fun of Dots_and_Boxes!
 
-[Download APK](D:\DotsAndBox\app\release\dots&boxes.apk)
+[Download APK](D:\DotsAndBox\apk\dots&boxes.apk)
