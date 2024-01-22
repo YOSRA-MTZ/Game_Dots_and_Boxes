@@ -27,7 +27,3 @@ To install the Dots_and_Boxes APK:
 Enjoy the strategic challenge of Dots_and_Boxes!
 
 ---
-
-Download the game and dive into the fun of Dots_and_Boxes!
-
-[Download APK](https://github.com/YOSRA-MTZ/Dots_and_Boxes/tree/main/apk)
