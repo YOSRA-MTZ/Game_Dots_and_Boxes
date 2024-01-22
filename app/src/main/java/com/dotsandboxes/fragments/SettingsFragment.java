@@ -71,12 +71,12 @@ public class SettingsFragment extends PreferenceFragmentCompat /*implements Pref
         Intent intent = new Intent(getActivity(), MusicPlayerService.class);
 
         // start playing music if the user specified so in the settings screen
-        boolean playMusic = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(getString(R.string.pref_key_music), true);
-        if (playMusic) {
+        //boolean playMusic = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(getString(R.string.pref_key_music), true);
+        /*if (playMusic) {
             intent.setAction(MusicPlayerService.ACTION_START_MUSIC);
         } else {
             intent.setAction(MusicPlayerService.ACTION_STOP_MUSIC);
-        }
+        }*/
 
         getActivity().bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
         serviceBound = true;
@@ -118,31 +118,13 @@ public class SettingsFragment extends PreferenceFragmentCompat /*implements Pref
         findPreference(getString(R.string.pref_key_music)).setOnPreferenceChangeListener((preference, newValue) -> {
             Timber.e("onPreferenceChange: " + preference.getKey() + "  " + newValue.toString());
 
-            if (preference.getKey().equals(getString(R.string.pref_key_music))) {
-                if ((boolean) newValue) {
-                    Intent intent = new Intent(getActivity(), MusicPlayerService.class);
-                    intent.setAction(MusicPlayerService.ACTION_START_MUSIC);
-                    mService.sendCommand(intent);
-                } else {
-                    Intent intent = new Intent(getActivity(), MusicPlayerService.class);
-                    intent.setAction(MusicPlayerService.ACTION_STOP_MUSIC);
-                    mService.sendCommand(intent);
-                }
-            }
+
             return true;
         });
         findPreference(getString(R.string.pref_key_music)).setPersistent(true);
         findPreference(getString(R.string.pref_key_sound)).setPersistent(true);
         findPreference(getString(R.string.pref_key_vibrate)).setPersistent(true);
-       /* findPreference(getString(R.string.pref_key_privacy_policy)).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                if (preference.getKey().equals(getString(R.string.pref_key_privacy_policy))) {
-                    ((MainActivity) getActivity()).replaceFragment(new PrivacyFragment(), false);
-                }
-                return true;
-            }
-        });*/
+
     }
 
     @Override
@@ -150,12 +132,6 @@ public class SettingsFragment extends PreferenceFragmentCompat /*implements Pref
 
     }
 
-   /* @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-
-
-        return true;
-    }*/
 
     @Override
     public void onStart() {

@@ -9,9 +9,7 @@ import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 import timber.log.Timber;
 
-/**
- * * Created by Raghav on 24.07.22
- */
+
 public class RxBus {
 
     private static RxBus instance;

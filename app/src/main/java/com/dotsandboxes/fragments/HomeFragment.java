@@ -138,32 +138,9 @@ public class HomeFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_share:
-                shareDotsAndBoxes();
-               // ((MainActivity) getActivity()).showLoader();
+
                 break;
-            /*case R.id.btn_music:
-                final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-                final boolean hasMusic = preferences.getBoolean(getString(R.string.pref_key_music), false);
-                Intent intentMusic = new Intent(getActivity(), MusicPlayerService.class);
-                if (!hasMusic) {
 
-                    intentMusic.setAction(MusicPlayerService.ACTION_START_MUSIC);
-                    ((MainActivity) getActivity()).mService.sendCommand(intentMusic);
-
-                    preferences.edit().putBoolean(getString(R.string.pref_key_music), true).apply();
-                    Glide.with(getActivity())
-                            .load(R.drawable.volumeon)
-                            .into(btnMusic);
-                } else {
-                    intentMusic.setAction(MusicPlayerService.ACTION_STOP_MUSIC);
-                    ((MainActivity) getActivity()).mService.sendCommand(intentMusic);
-
-                    preferences.edit().putBoolean(getString(R.string.pref_key_music), false).apply();
-                    Glide.with(getActivity())
-                            .load(R.drawable.volumoff)
-                            .into(btnMusic);
-                }
-                break;*/
             case R.id.btn_profile:
                 //((MainActivity) getActivity()).hideLoader();
                 ((MainActivity) getActivity()).replaceFragment(new ProfileFragment(), false);
@@ -203,32 +180,6 @@ public class HomeFragment extends Fragment {
                     String columnOnline = rowColumnPair.second;
                     ((MainActivity) getActivity()).invitePlayers(rowOnline, columnOnline);
                 }else{
-                    /*AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
-                    builder1.setMessage( getString(R.string.play_games_not_installed));
-                    builder1.setCancelable(false);
-
-                    builder1.setPositiveButton(getString(R.string.ok),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    try {
-                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.play.games")));
-                                    } catch (android.content.ActivityNotFoundException anfe) {
-                                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.play.games")));
-                                    }
-                                    dialog.cancel();
-                                    getActivity().finishAffinity();
-                                }
-                            });
-                    builder1.setNegativeButton(getString(R.string.cancel),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                }
-                            });
-
-                    AlertDialog alert11 = builder1.create();
-                    if (!alert11.isShowing())
-                        alert11.show();*/
 
                     final Dialog dialogSort = new Dialog(getActivity());
                     dialogSort.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -239,16 +190,7 @@ public class HomeFragment extends Fragment {
                     AppCompatTextView tvOk = dialogSort.findViewById(R.id.tv_ok);
                     tvOk.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        /*public void onClick(View view) {
-                            try {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.google.android.play.games")));
-                            } catch (android.content.ActivityNotFoundException anfe) {
-                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.play.games")));
-                            }
-                            dialogSort.dismiss();
-                            getActivity().finishAffinity();
 
-                        }*/
                         public void onClick(View view) {
                             dialogSort.dismiss();
                         }
@@ -276,97 +218,7 @@ public class HomeFragment extends Fragment {
                 break;
         }
     }
-   /* @OnClick({R.id.btn_share, R.id.btn_profile, R.id.ll_grid_size,
-            R.id.ll_me_vs_robot, R.id.ll_me_vs_friend, R.id.ll_me_vs_online,
-            R.id.btn_history, R.id.btn_setting, R.id.btn_how_to, R.id.btn_music})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-          *//*  case R.id.sign_in_button:
-                  shareDotsAndBoxes();
-                startSignInIntent();*//*
-            case R.id.btn_share:
-                //   shareDotsAndBoxes();
-                // onStartMatchClicked();
-                break;
-            case R.id.btn_profile:
-               *//* startActivity(new Intent(getActivity(), ProfileActivity.class));
-                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);*//*
-                //  onCheckGamesClicked();
-                break;
-            case R.id.ll_grid_size:
-                 showPopupMenu(llGridSize);
-                break;
-            case R.id.ll_me_vs_robot:
-                //logic for me vs robot
-              *//*  Intent intent = new Intent(getActivity(), GameActivity.class);
-                String row = rowColumnPair.first;
-                String column = rowColumnPair.second;
-                intent.putExtra(Constants.SELECTED_ROW, row);
-                intent.putExtra(Constants.SELECTED_COLUMN, column);
-                intent.putExtra(Constants.GAME_MODE, Constants.ROBOT);
-                intent.putExtra(Constants.prefrences.NAME, nameFromPrefrence);
-                intent.putExtra(Constants.prefrences.PROFILE_IMAGE, imageFromPreference);
-                startActivity(intent);*//*
 
-                break;
-            case R.id.ll_me_vs_friend:
-          *//*      PlayerNameFragment dialog = new PlayerNameFragment();
-                dialog.setStyle(DialogFragment.STYLE_NO_TITLE, 0);
-                dialog.show(getSupportFragmentManager(), "dialog_fragment");
-                dialog.setCancelable(true);*//*
-                break;
-            case R.id.ll_me_vs_online:
-                String rowOnline = rowColumnPair.first;
-                String columnOnline = rowColumnPair.second;
-                ((MainActivity) getActivity()).invitePlayers(rowOnline, columnOnline);
-               *//* Intent intent3 = new Intent(getActivity(), GameActivity.class);
-                String row3 = tvSelectedRow.getText().toString();
-                String column3 = tvSelectedColumn.getText().toString();
-                intent3.putExtra(Constants.SELECTED_ROW, row3);
-                intent3.putExtra(Constants.SELECTED_COLUMN, column3);
-                intent3.putExtra(Constants.GAME_MODE, Constants.ONLINE);
-                startActivity(intent3);*//*
-                break;
-            case R.id.btn_history:
-              *//*  startActivity(new Intent(getActivity(), HistoryActivity.class));
-                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);*//*
-                //   overridePendingTransition(R.anim.slide_in_up, R.anim.stay);
-                break;
-            case R.id.btn_setting:
-               *//* startActivity(new Intent(getActivity(), SettingsActivity.class));
-                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);*//*
-                //  overridePendingTransition(R.anim.slide_in_up, R.anim.stay);
-                break;
-            case R.id.btn_how_to:
-                *//*startActivity(new Intent(getActivity(), HowToActivity.class));
-                overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);*//*
-                // overridePendingTransition(R.anim.slide_in_up, R.anim.stay);
-                break;
-            case R.id.btn_music:
-                *//*final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-                final boolean hasMusic = preferences.getBoolean(getString(R.string.pref_key_music), false);
-                Intent intentMusic = new Intent(this, MusicPlayerService.class);
-                if (!hasMusic) {
-
-                    intentMusic.setAction(MusicPlayerService.ACTION_START_MUSIC);
-                     ((MainActivity) getActivity()).mService.sendCommand(intentMusic);
-
-                    preferences.edit().putBoolean(getString(R.string.pref_key_music), true).apply();
-                    Glide.with(getActivity())
-                            .load(R.drawable.ic_sound_on)
-                            .into(btnMusic);
-                } else {
-                    intentMusic.setAction(MusicPlayerService.ACTION_STOP_MUSIC);
-                     ((MainActivity) getActivity()).mService.sendCommand(intentMusic);
-
-                    preferences.edit().putBoolean(getString(R.string.pref_key_music), false).apply();
-                    Glide.with(getActivity())
-                            .load(R.drawable.ic_sound_off)
-                            .into(btnMusic);
-                }*//*
-                break;
-        }
-    }*/
 
     /**
      * this function will start animation
@@ -404,15 +256,7 @@ public class HomeFragment extends Fragment {
 
         boolean playMusic = PreferenceManager.getDefaultSharedPreferences(getActivity()).getBoolean(getString(R.string.pref_key_music), true);
 
-        /*if (playMusic) {
-            Glide.with(getActivity())
-                    .load(R.drawable.volumeon)
-                    .into(btnMusic);
-        } else {
-            Glide.with(getActivity())
-                    .load(R.drawable.volumoff)
-                    .into(btnMusic);
-        }*/
+
 
         if (nameFromPrefrence != null && !TextUtils.isEmpty(nameFromPrefrence)) {
             tvPlayer1NameVsRobot.setText(nameFromPrefrence);
@@ -424,30 +268,6 @@ public class HomeFragment extends Fragment {
             tvPlayer1NameVsOnlineFriend.setText(getString(R.string.me));
         }
 
-   /*     if (imageFromPreference != null && !TextUtils.isEmpty(imageFromPreference)) {
-            ((MainActivity) getActivity()).setImageToImageView(imageFromPreference, imgPlayer1NameVsRobot);
-            ((MainActivity) getActivity()).setImageToImageView(imageFromPreference, imgPlayer1NameVsFriend);
-            ((MainActivity) getActivity()).setImageToImageView(imageFromPreference, imgPlayer1NameVsOnlineFriend);
-        } else {
-            ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.me_icon, imgPlayer1NameVsRobot);
-            ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.me_icon, imgPlayer1NameVsFriend);
-            ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.me_icon, imgPlayer1NameVsOnlineFriend);
-        }*/
-
-/*
-        ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.robot_icon, imgPlayer2NameVsRobot);
-        ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.friend_icon, imgPlayer2NameVsFriend);
-        ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.online, imgPlayer2NameVsOnlineFriend);*/
-
-
-
-       /* GameRequestFragment dialog = new GameRequestFragment();
-       dialog = new GameRequestFragment();
-        dialog.setStyle(DialogFragment.STYLE_NO_TITLE, 0);
-        dialog.show(getSupportFragmentManager(), "dialog_fragment");
-        dialog.setCancelable(false);*/
-
-        // llMeVsOnline.setVisibility(View.INVISIBLE);
 
 
     }

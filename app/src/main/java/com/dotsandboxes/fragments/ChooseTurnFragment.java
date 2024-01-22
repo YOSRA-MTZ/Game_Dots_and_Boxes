@@ -78,9 +78,7 @@ public class ChooseTurnFragment extends DialogFragment {
         gameMode = getArguments().getString(Constants.GAME_MODE);
         playerYou = getArguments().getString(Constants.PLAYER1_NAME, Constants.PLAYER_YOU);
         playerFriend = getArguments().getString(Constants.PLAYER2_NAME, Constants.PLAYER_ROBOT);
-       /* playerNameMeFromPreference = getArguments().getString(Constants.prefrences.NAME);
-        playerMeImageFfromPreference = getArguments().getString(Constants.prefrences.PROFILE_IMAGE);*/
-    }
+     }
 
 
     @Override

@@ -78,18 +78,11 @@ public class BoardView extends View {
      */
     private void init() {
 
-        // setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
-        // setBackgroundColor(Color.TRANSPARENT);
 
         linePaint = new Paint();
         linePaint.setAntiAlias(true);
         linePaint.setStrokeWidth(10f);
         linePaint.setColor(ContextCompat.getColor(getContext(), R.color.icon_color_white));
-
-       /* lineTempPaint = new Paint();
-        lineTempPaint.setAntiAlias(true);
-        lineTempPaint.setStrokeWidth(12f);
-        lineTempPaint.setColor(ContextCompat.getColor(getContext(), R.color.icon_color_white));*/
 
         dotPaint = new Paint();
         dotPaint.setColor(ContextCompat.getColor(getContext(), R.color.icon_color_white));
@@ -158,12 +151,9 @@ public class BoardView extends View {
                     x2 = horizontalOffset + (j + 1) * boxSide;
                     y2 = verticalOffset + (i + 1) * boxSide;
 
-                    /*Drawable d = getResources().getDrawable(R.drawable.fillblue, null);*/
                     selectedDrawable.setBounds(x1, y1, x2, y2);
                     selectedDrawable.draw(canvas);
-                  /*  Bitmap bmp = drawableToBitmap(getResources().getDrawable(R.drawable.vs_icon));
-                    canvas.drawBitmap(bmp, x1, y1, null);*/
-                    // canvas.drawRect(x1, y1, x2, y2, boxPaint);
+
                 }
 
                 if (box.top) {
@@ -203,17 +193,6 @@ public class BoardView extends View {
                 }
             }
 
-        // draw the temp line
-       /* if (drawTemp && (x1temp > 0 && x1temp <= board.getColumns() &&
-                        x2temp > 0 && x2temp <= board.getColumns() &&
-                        y1temp > 0 && y1temp <= board.getRows() &&
-                        y2temp > 0 && y2temp <= board.getRows())) {
-
-            canvas.drawLine(x1temp*boxSide + horizontalOffset,
-                            y1temp*boxSide + verticalOffset,
-                            x2temp*boxSide + horizontalOffset,
-                            y2temp*boxSide + verticalOffset, lineTempPaint);
-        }*/
 
         // draw the dots
         for (int i = 0; i <= board.getRows(); i++)
@@ -227,16 +206,7 @@ public class BoardView extends View {
         if (revalidate)
             this.postInvalidate();
     }
-  /*  public Bitmap drawableToBitmap(Drawable drawable) {
 
-        if (drawable instanceof BitmapDrawable) {
-            Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
-            return bitmap;
-        }
-
-        Bitmap bitmap = Bitmap.createBitmap(0, 0, Bitmap.Config.ARGB_8888);
-        return bitmap;
-    }*/
 
     /**
      * Sets the game object and calculates the width and height of the touch area

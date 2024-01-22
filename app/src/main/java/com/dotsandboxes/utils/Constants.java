@@ -1,9 +1,5 @@
 package com.dotsandboxes.utils;
 
-/**
- * Created by scelus on 27.03.17
- */
-
 public class Constants {
     public static final String SELECTED_ROW = "row";
     public static final String SELECTED_COLUMN = "column";

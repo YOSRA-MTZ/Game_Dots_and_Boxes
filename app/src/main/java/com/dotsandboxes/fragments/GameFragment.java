@@ -209,11 +209,7 @@ public class GameFragment extends Fragment {
         ((MainActivity) getActivity()).tvToolbarTitle.setText("");
         ((MainActivity) getActivity()).tvToolbarTitle.setVisibility(View.INVISIBLE);
 
-   /*     if (playerMeImageFfromPreference != null && !TextUtils.isEmpty(playerMeImageFfromPreference)) {
-            ((MainActivity) getActivity()).setImageToImageView(playerMeImageFfromPreference, imgPlayer1);
-        } else {
-            ((MainActivity) getActivity()).setImageToImageViewFromResource(R.drawable.profile_image, imgPlayer1);
-        }*/
+
 
         switch (gameMode) {
             case Constants.ROBOT:

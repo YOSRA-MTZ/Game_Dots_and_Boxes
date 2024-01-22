@@ -2,8 +2,6 @@ package com.dotsandboxes.fragments;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,15 +22,10 @@ import com.bumptech.glide.request.RequestOptions;
 import com.dotsandboxes.DotsAndBoxesApplication;
 import com.dotsandboxes.R;
 import com.dotsandboxes.activities.MainActivity;
-import com.dotsandboxes.imagepicker.ImagePickerCallback;
-import com.dotsandboxes.imagepicker.ImagePickerFragment;
-import com.dotsandboxes.imagepicker.MarshMallowHelper;
 import com.dotsandboxes.utils.Constants;
 import com.dotsandboxes.utils.PrefUtils;
 import com.google.android.gms.ads.AdView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
@@ -201,25 +194,7 @@ public class ProfileFragment extends Fragment {
      * this function used to open dialog for selection option for profile image if user want to
      * add it.
      *//*
-    private void selectProfileImage() {
-        final CharSequence[] items;
-        items = new CharSequence[]{getString(R.string.str_take_photo), getString(R.string.str_choose_from_library)};
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.str_choose_picture);
-        builder.setItems(items, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int item) {
-                if (items[item].equals(getString(R.string.str_take_photo))) {
-                    mImagePickerFragment.captureImageFromCamera(ProfileFragment.this);
-
-                } else if (items[item].equals(getString(R.string.str_choose_from_library))) {
-                    mImagePickerFragment.selectImageFromGallery(ProfileFragment.this);
-                }
-            }
-        });
-        builder.show();
-    }*/
 
     /**
      * This method calculate win percentage
@@ -247,26 +222,5 @@ public class ProfileFragment extends Fragment {
         return true;
     }
 
-/*    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        mImagePickerFragment.processPermissionResults(requestCode, grantResults, this);
-    }
-
-    @Override
-    public void onCompleteTakingImage(@Nullable Uri uri, boolean isCropped) {
-        Glide.with(this).load(uri).apply(RequestOptions.circleCropTransform()).into(ivProfile);
-        prefUtils.setString(Constants.prefrences.PROFILE_IMAGE, uri.toString());
-    }
-
-    @Override
-    public void onCancelTakingImage() {
-
-    }
-
-    @Override
-    public void onErrorTakingImage(@NonNull String messageToShow, @NonNull Throwable t) {
-
-    }*/
 }

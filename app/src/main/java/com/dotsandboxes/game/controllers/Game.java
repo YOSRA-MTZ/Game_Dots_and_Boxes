@@ -10,15 +10,9 @@ import com.dotsandboxes.game.models.Board;
 import com.dotsandboxes.game.models.Edge;
 import com.dotsandboxes.game.models.Graph;
 
-/**
- * Game class object responsible for handling the game as it develops.
- * It interfaces the game state and keeps track of the board, notifies the game listeners
- * and indicated when a turn has changed.
- */
+
 public class Game {
-    /**
-     *  Reactive Bus subscription
-     */
+
     private final RxBus rxBus;
 
     private Board board;
@@ -197,7 +191,7 @@ public class Game {
     }
 
     /**
-     * Notifies the listeners for a turn change
+     * Notifies for a turn change
      *
      * @param nextPlayer the mService who is going the take the next turn
      */
@@ -206,7 +200,7 @@ public class Game {
     }
 
     /**
-     * Notifies the listeners for a score change
+     * Notifies for a score change
      *
      * @param player the mService who's score is changing
      * @param score  the mService's score

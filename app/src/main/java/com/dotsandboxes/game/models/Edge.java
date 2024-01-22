@@ -2,9 +2,6 @@ package com.dotsandboxes.game.models;
 
 import java.util.Locale;
 
-/**
- * Created by scelus on 08.03.17
- */
 
 public class Edge {
     private int dot_start;

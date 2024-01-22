@@ -23,7 +23,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.dotsandboxes.R;
 import com.dotsandboxes.services.MusicPlayerService;
 import com.dotsandboxes.services.MusicService;
-import com.dotsandboxes.utils.AdsWrapper;
+
 import com.dotsandboxes.utils.Constants;
 import com.dotsandboxes.utils.PrefUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -77,7 +77,7 @@ public abstract class MusicPlayerActivity extends AppCompatActivity {
     private static final int RC_INVITATION_INBOX = 9008;
     public MusicPlayerService mService;
     public boolean doubleBackToExitPressedOnce;
-    public AdsWrapper adsWrapper;
+
     public PrefUtils prefUtils;
     boolean serviceBound = false;
     // The currently signed in account, used to check the account has changed outside of this activity when resuming.
@@ -620,7 +620,6 @@ public abstract class MusicPlayerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adsWrapper = new AdsWrapper.Builder().with(this).addTestDeviceIds(new String[]{"FC0135B6D6269BE7C5D5669065FBF72F"}).build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
         prefUtils = new PrefUtils(MusicPlayerActivity.this);
         // this will check user is already signed in or not
